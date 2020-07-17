@@ -1,3 +1,3 @@
 # Welcome To The Styx
 
-This is a fun repository I made when I got www.styxlife.com domain name. 
+This is the repository of a fun side project I was working on. The final product can be found here: https://thestyx.netlify.app
