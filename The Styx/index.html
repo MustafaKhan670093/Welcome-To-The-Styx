@@ -1,0 +1,91 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<title>Styx Life</title>
+<link rel="icon" href="favicon.png" type="image/png">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/respond-1.1.0.min.js"></script>
+<script src="js/html5shiv.js"></script>
+<script src="js/html5element.js"></script>
+</head>
+
+<body>
+<div id='preloader' class="preloader" style="">
+  <div class="demo">
+    <div class="cp-preloader cp-preloader_type2">
+      <span class="cp-preloader__letter" data-preloader="T">T</span>
+      <span class="cp-preloader__letter" data-preloader="H">H</span>
+      <span class="cp-preloader__letter" data-preloader="E">E</span>
+      <span class="cp-preloader__letter" style ="display:inline-block;">&nbsp;</span>
+      <span class="cp-preloader__letter" data-preloader="S">S</span>
+      <span class="cp-preloader__letter" data-preloader="T">T</span>
+      <span class="cp-preloader__letter" data-preloader="Y">Y</span>
+      <span class="cp-preloader__letter" data-preloader="X">X</span>
+    </div>
+</div>
+</div>
+
+<!-- <iframe width="0" height="0" src="https://www.youtuberepeater.com/watch?v=pKXssMNYAg4#gsc.tab=0"  frameborders="0" allowfullscreen></iframe> --> <!-- This line of code is responsible for the looped music on the page-->
+<!-- <iframe style="display:none;" width="1440" height="596" src="https://www.youtuberepeater.com/watch?v=pKXssMNYAg4#gsc.tab=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+
+<iframe style="display: none;" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLfZ8O71LOakuktZvIOrCwOgr04eht7_J5&autoplay=1&loop=1" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+
+<!--Body: Styx Life-->
+<div class="background-wrap">
+<div class="inner_wrapper aboutUs-container fadeInLeft animated wow">
+    <div class="inner_section">
+      <canvas id="canvas">Your browser doesn't support canvas ; - ;</canvas>
+
+<!-- SVG Goo filter from: https://css-tricks.com/gooey-effect/ -->
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+    <defs>
+      <filter id="shadowed-goo">
+
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feGaussianBlur in="goo" stdDeviation="3" result="shadow" />
+          <feColorMatrix in="shadow" mode="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 -0.2" result="shadow" />
+          <feOffset in="shadow" dx="1" dy="1" result="shadow" />
+          <feBlend in2="shadow" in="goo" result="goo" />
+          <feBlend in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+      <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" result="blur" stdDeviation="10" />
+          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+          <feBlend in2="goo" in="SourceGraphic" result="mix" />
+      </filter>
+    </defs>
+</svg>
+
+    </div>
+  </div>
+</div>
+
+<!--Scripts-->
+<script src="js/animation.min.js"></script>
+
+<script>
+setTimeout(preload, 3000);    // This allows the preloader screen to stay on the page for 4 seconds
+
+function preload() {    // This funciton is responsible for fading out the preloader
+const preloader = document.querySelector('.preloader');
+
+const fadeEffect = setInterval(() => {
+  // if we don't set opacity 1 in CSS, then   //it will be equaled to "", that's why we   // check it
+  if (!preloader.style.opacity) {
+    preloader.style.opacity = 1;
+  }
+  if (document.readyState === 'complete' && preloader.style.opacity > 0) {      //preloader.style.opacity > 0
+    preloader.style.opacity -= 0.1;
+  } else {
+    // preloader.style.display=”none”
+    clearInterval(fadeEffect);
+    document.getElementById('preloader').style.display = 'none';
+  }
+}, 100);
+}
+</script>
+</body>
+</html>
