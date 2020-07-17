@@ -27,9 +27,7 @@
 </div>
 </div>
 
-<!-- <iframe width="0" height="0" src="https://www.youtuberepeater.com/watch?v=pKXssMNYAg4#gsc.tab=0"  frameborders="0" allowfullscreen></iframe> --> <!-- This line of code is responsible for the looped music on the page-->
-<!-- <iframe style="display:none;" width="1440" height="596" src="https://www.youtuberepeater.com/watch?v=pKXssMNYAg4#gsc.tab=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
-
+<!-- The following line of code is responsible for the looped music on the page-->
 <iframe style="display: none;" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLfZ8O71LOakuktZvIOrCwOgr04eht7_J5&autoplay=1&loop=1" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
 
 <!--Body: Styx Life-->
@@ -63,24 +61,22 @@
   </div>
 </div>
 
-<!--Scripts-->
+<!--Scripts Necessary For Preloader-->
 <script src="js/animation.min.js"></script>
 
 <script>
-setTimeout(preload, 3000);    // This allows the preloader screen to stay on the page for 4 seconds
+setTimeout(preload, 3000);    // This allows the preloader screen to stay on the page for 3 seconds
 
 function preload() {    // This funciton is responsible for fading out the preloader
 const preloader = document.querySelector('.preloader');
 
 const fadeEffect = setInterval(() => {
-  // if we don't set opacity 1 in CSS, then   //it will be equaled to "", that's why we   // check it
   if (!preloader.style.opacity) {
     preloader.style.opacity = 1;
   }
-  if (document.readyState === 'complete' && preloader.style.opacity > 0) {      //preloader.style.opacity > 0
+  if (document.readyState === 'complete' && preloader.style.opacity > 0) {     
     preloader.style.opacity -= 0.1;
   } else {
-    // preloader.style.display=”none”
     clearInterval(fadeEffect);
     document.getElementById('preloader').style.display = 'none';
   }
