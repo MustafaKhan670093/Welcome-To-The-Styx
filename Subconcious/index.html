@@ -1,0 +1,103 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, maximum-scale=1">
+<title>The Subconcious</title>
+<link rel="icon" href="subconsciousicon.png" type="image/png">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script src="js/respond-1.1.0.min.js"></script>
+<script src="js/html5shiv.js"></script>
+<script src="js/html5element.js"></script>
+</head>
+
+
+<body>
+<!--The Preloader-->
+  <div id='preloader' class="preloader" style="">
+    <div class="demo">
+      <div class="cp-preloader cp-preloader_type2">
+        <span class="cp-preloader__letter" data-preloader="T">T</span>
+        <span class="cp-preloader__letter" data-preloader="H">H</span>
+        <span class="cp-preloader__letter" data-preloader="E">E</span>
+        <span class="cp-preloader__letter" style ="display:inline-block;">&nbsp;</span>
+        <span class="cp-preloader__letter" data-preloader="S">S</span>
+        <span class="cp-preloader__letter" data-preloader="U">U</span>
+        <span class="cp-preloader__letter" data-preloader="B">B</span>
+        <span class="cp-preloader__letter" data-preloader="C">C</span>
+        <span class="cp-preloader__letter" data-preloader="O">O</span>
+        <span class="cp-preloader__letter" data-preloader="N">N</span>
+        <span class="cp-preloader__letter" data-preloader="C">C</span>
+        <span class="cp-preloader__letter" data-preloader="I">I</span>
+        <span class="cp-preloader__letter" data-preloader="O">O</span>
+        <span class="cp-preloader__letter" data-preloader="U">U</span>
+        <span class="cp-preloader__letter" data-preloader="S">S</span>
+      </div>
+  </div>
+  </div>
+
+
+
+<!-- Comfort Playlist
+<iframe id="youtube_player" style="display: none;" width="560" height="315" src="https://www.youtube.com/embed/videoseries?list=PLfZ8O71LOakuuWRjEzk7Fu8QWP2NtE9TN&autoplay=1&loop=1" frameborder="0" allow="autoplay; encrypted-media;" allowfullscreen></iframe>
+-->
+
+<!-- Suspense: Redletter
+<iframe style="display: none;" width="560" height="315" src="https://www.youtuberepeater.com/watch?v=rBaMrCxzPFI#gsc.tab=0?rel=0&autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
+
+<!-- Suspense: Fluctlight-->
+<iframe style="display: none;" width="560" height="315" src="https://www.youtuberepeater.com/watch?v=vnfKFBpMtOc#gsc.tab=0?rel=0&autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+
+<!-- Sadness: Ad La Lib Music
+<iframe style="display: none;" width="560" height="315" src="https://www.youtuberepeater.com/watch?v=B7HXK-ED0_0#gsc.tab=0?rel=0&autoplay=1&loop=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+-->
+
+<!--The Subconcious-->
+<div class="container">
+  <div class="text"></div>
+</div>
+
+
+
+<!--Scripts-->
+<script src="js/animate.js"></script>
+
+<script>
+setTimeout(preload, 3000);    // This allows the preloader screen to stay on the page for 4 seconds
+
+function preload() {    // This funciton is responsible for fading out the preloader
+const preloader = document.querySelector('.preloader');
+
+const fadeEffect = setInterval(() => {
+  // if we don't set opacity 1 in CSS, then   //it will be equaled to "", that's why we   // check it
+  if (!preloader.style.opacity) {
+    preloader.style.opacity = 1;
+  }
+  if (document.readyState === 'complete' && preloader.style.opacity > 0) {      //preloader.style.opacity > 0
+    preloader.style.opacity -= 0.1;
+  } else {
+    // preloader.style.display=”none”
+    clearInterval(fadeEffect);
+    document.getElementById('preloader').style.display = 'none';
+  }
+}, 100);
+}
+</script>
+
+<script>
+const word = document.querySelector(".word");
+const ul = document.querySelector(".underline");
+const link = document.querySelector(".link");
+word.addEventListener("mouseover", (e) => {
+  ul.classList.add("active");
+  link.classList.add("active");
+});
+word.addEventListener("mouseout", (e) => {
+  ul.classList.remove("active");
+  link.classList.remove("active");
+});
+</script>
+</body>
+</html>

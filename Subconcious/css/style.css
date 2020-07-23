@@ -1,0 +1,380 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Roboto+Mono:100");
+
+body {
+  align-items: center;
+  display: flex;
+  font-family: "Josefin Sans", sans-serif;
+  font-size: 40px;
+  justify-content: center;
+  line-height: 1.3em;
+  height: 100vh;
+}
+.container {
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+.text {
+  width: 395px;
+  font-weight: 100;
+  font-size: 28px;
+  color: #FAFAFA;
+}
+.dud {
+  color: #757575;}
+
+.word {
+  cursor: pointer;
+  position: relative;
+  -webkit-tap-highlight-color: transparent;
+}
+.link {
+  font-size: 18px;
+  left: 20px;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  top: -68px;
+  transform: translateY(84px) scale(0.5);
+  transform-origin: 0% 50%;
+  transition: opacity 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  z-index: 1;
+}
+.link.active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  /* transition: opacity 200ms 100ms, transform 200ms 100ms; */
+}
+.underline {
+  background-color: #e28090;
+  clip-path: polygon(
+    10.41708% 53.4%,
+    50.42189% 53.40079%,
+    50.423% 53.44997%,
+    50.42189% 53.49995%,
+    50.423% 53.54992%,
+    50.42189% 53.5999%,
+    50.423% 53.64987%,
+    50.42189% 53.69985%,
+    50.423% 53.74982%,
+    50.42189% 53.79979%,
+    50.423% 53.84979%,
+    50.42189% 53.89979%,
+    50.423% 53.94979%,
+    50.42189% 53.99979%,
+    50.423% 54.04979%,
+    50.42189% 54.09979%,
+    50.423% 54.14979%,
+    50.42189% 54.19979%,
+    50.423% 54.24979%,
+    50.42189% 54.29979%,
+    50.423% 54.34979%,
+    50.42189% 54.39979%,
+    50.423% 54.44979%,
+    50.42189% 54.49979%,
+    50.423% 54.54979%,
+    50.42189% 54.60079%,
+    27.2% 54.59979%,
+    26.75% 54.60079%,
+    26.3% 54.59979%,
+    25.85% 54.60079%,
+    25.4% 54.59979%,
+    24.95% 54.60079%,
+    24.5% 54.59979%,
+    24.05% 54.60079%,
+    23.6% 54.59979%,
+    23.15% 54.60079%,
+    22.7% 54.59979%,
+    22.25% 54.60079%,
+    21.8% 54.59979%,
+    21.35% 54.60079%,
+    20.9% 54.59979%,
+    20.45% 54.60079%,
+    20% 54.59979%,
+    10.41708% 54.60079%,
+    10.418% 54.54979%,
+    10.41708% 54.49979%,
+    10.418% 54.44979%,
+    10.41708% 54.39979%,
+    10.418% 54.34979%,
+    10.41708% 54.29979%,
+    10.418% 54.24979%,
+    10.41708% 54.19979%,
+    10.418% 54.14979%,
+    10.41708% 54.09979%,
+    10.418% 54.04979%,
+    10.41708% 53.99979%,
+    10.418% 53.94979%,
+    10.41708% 53.89979%,
+    10.418% 53.84979%,
+    10.41708% 53.79979%,
+    10.418% 53.74982%,
+    10.41708% 53.69985%,
+    10.418% 53.64987%,
+    10.41708% 53.5999%,
+    10.418% 53.54992%,
+    10.41708% 53.49995%,
+    10.418% 53.44997%
+  );
+  height: 100%;
+  pointer-events: none;
+  position: absolute;
+  transition: clip-path 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  width: 100%;
+}
+.underline.active {
+  clip-path: polygon(
+    15.5% 31.7%,
+    82.76439% 31.70072%,
+    83.77453% 31.77289%,
+    84.71424% 31.98204%,
+    85.56371% 32.3132%,
+    86.30314% 32.7521%,
+    86.91273% 33.28449%,
+    87.37267% 33.89611%,
+    87.66316% 34.5727%,
+    87.76439% 35.3%,
+    87.765% 35.75%,
+    87.76439% 36.2%,
+    87.765% 36.65%,
+    87.76439% 37.1%,
+    87.765% 37.55%,
+    87.76439% 38%,
+    87.765% 38.45%,
+    87.76439% 38.9%,
+    87.663% 39.6273%,
+    87.37267% 40.30389%,
+    86.91273% 40.91551%,
+    86.30314% 41.4479%,
+    85.56371% 41.88681%,
+    84.71424% 42.21796%,
+    83.77453% 42.42711%,
+    82.76439% 42.5%,
+    38.54628% 42.50072%,
+    37.29909% 42.70508%,
+    36.29835% 43.24575%,
+    35.46783% 44.01014%,
+    34.73133% 44.88639%,
+    34.01261% 45.76264%,
+    33.23546% 46.52703%,
+    32.32367% 47.0677%,
+    31.201% 47.27278%,
+    31.84772% 46.40629%,
+    32.12586% 45.55517%,
+    32.09722% 44.75028%,
+    31.82359% 44.02251%,
+    31.36675% 43.40272%,
+    30.7885% 42.92179%,
+    30.15063% 42.61059%,
+    29.51492% 42.5%,
+    15.5% 42.5%,
+    14.48986% 42.42711%,
+    13.55016% 42.21796%,
+    12.70068% 41.88681%,
+    11.96125% 41.4479%,
+    11.35166% 40.91551%,
+    10.89172% 40.30389%,
+    10.60123% 39.6273%,
+    10.5% 38.9%,
+    10.501% 38.45%,
+    10.5% 38%,
+    10.501% 37.55%,
+    10.5% 37.1%,
+    10.501% 36.65%,
+    10.5% 36.2%,
+    10.501% 35.75%,
+    10.5% 35.3%,
+    10.601% 34.5727%,
+    10.89172% 33.89611%,
+    11.35166% 33.28449%,
+    11.96125% 32.7521%,
+    12.70068% 32.3132%,
+    13.55016% 31.98204%,
+    14.48986% 31.77289%
+  );
+}
+@media (max-width: 480px) {
+  .container {
+    transform: scale(0.7);
+  }
+}
+
+
+
+
+/* Styles
+---------------------------------*/
+/*body {
+    background: #ffffff;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    font-weight: normal;
+    /* color: #888888; */
+  /*  margin: 0;
+}
+*/
+
+html, body{
+    margin:0;
+    padding:0;
+    font-family: 'Roboto Mono', monospace;
+    background: #212121;
+    height: 100%;
+}
+
+#canvas{
+    margin:0 auto;
+    display:block;
+    filter:url('#shadowed-goo');
+}
+
+svg{
+  display:none;
+}
+
+
+
+/*
+=====
+LODEARS
+=====
+*/
+
+.preloader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background: hsl(204, 70%, 85%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  transition: opacity 0.1s ease;
+}
+
+/* basic style */
+
+.cp-preloader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 999;
+  transform: translate3d(-50%, -50%, 0);
+}
+
+.cp-preloader__letter{
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  color: rgba(0, 0, 0, .3);
+}
+
+.cp-preloader__letter:before{
+  content: attr(data-preloader);
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-fill-mode: backwards;
+}
+
+.cp-preloader__letter:nth-child(2):before{
+  animation-delay: 0.3s;
+}
+
+.cp-preloader__letter:nth-child(3):before{
+  animation-delay: 0.45s;
+}
+
+.cp-preloader__letter:nth-child(4):before{
+  animation-delay: 0.6s;
+}
+
+.cp-preloader__letter:nth-child(5):before{
+  animation-delay: 0.75s;
+}
+
+.cp-preloader__letter:nth-child(6):before{
+  animation-delay: 0.9s;
+}
+
+.cp-preloader__letter:nth-child(7):before{
+  animation-delay: 1.05s;
+}
+
+/* type 2 */
+
+.cp-preloader_type2 .cp-preloader__letter:before{
+  animation-name: cp-preloader2;
+}
+
+@keyframes cp-preloader2{
+
+  0%, 75%, 100%{
+    transform: rotateY(-90deg);
+    opacity: 0;
+  }
+
+  20%, 58%{
+    transform: rotateY(0);
+    opacity: 1;
+  }
+}
+
+
+/*
+=====
+DEMO  PRELOADERS
+=====
+*/
+
+.cp-preloader__letter{
+  font-size: 3rem;
+  letter-spacing: 0.5rem;
+}
+
+.cp-preloader__letter:before{
+  color: #fff;
+}
+
+/*
+=====
+DEMO
+=====
+*/
+
+@media (max-width: 767px){
+
+  html{
+    font-size: 20%;
+  }
+}
+
+
+@media (min-width: 768px){
+
+  html{
+    font-size: 62.5%;
+  }
+}
+
+
+.demo{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+}
+
+.demo:nth-of-type(4n+1){
+  background-color: hsl(204, 70%, 85%);
+}
